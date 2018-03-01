@@ -3,7 +3,7 @@ import ride, car, readFile, router
 # --------------------------------------------
 # Input File with Rides
 
-inputFile = 'a_example.in'
+inputFile = 'test.in' #'b_should_be_easy.in'
 
 rides = readFile.getRides(inputFile)
 parameters = readFile.getParameters(inputFile)
@@ -14,15 +14,17 @@ carList = []
 
 for i in range (parameters["vehicles"]):
     carList.append (car.Car(i))
+    print(carList[len(carList)-1].id)
 
+print("List populated")
 
 for j in range (parameters["steps"]):
-
     for current_car in carList:
         if (current_car.carActive):
             current_car.moveCar()
 
     for current_ride in rides:
+        print("ride_loop")
         if (not current_ride.assigned()):
             Router.assignCar(current_ride, carList)
 

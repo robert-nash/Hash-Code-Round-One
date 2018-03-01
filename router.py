@@ -9,7 +9,9 @@ class Router:
         carDistance = -1
         carID = -1
         for current_car in carList:
+            print('loop' + str(current_car.id))
             if (not current_car.carActive):
+                print('car active')
                 carX = current_car.currentLocationX
                 carY = current_car.currentLocationY
                 pDistance = math.sqrt ((personX-carX)**2 + (personY-carY)**2)
@@ -21,4 +23,7 @@ class Router:
                         carDistance = pDistance
                         carID = current_car.id
 
-        carList[carID].startCar(personX, personY, endX, endY,carID)
+        if carID > -1:
+            print("car started")
+            carList[carID].startCar(personX, personY, endX, endY,carID)
+            current_ride.assignCar(carID)

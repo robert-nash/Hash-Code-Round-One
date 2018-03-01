@@ -47,8 +47,14 @@ class Car:
             elif (finalY < self.currentLocationY):
                 self.currentLocationY -= 1
 
+            print(self.id)
+            print(self.currentLocationX)
+            print(self.currentLocationY)
+            print('')
+
             if ((self.currentLocationX == finalX) and (self.currentLocationY == finalY)):
                 if ((finalX == self.destinationX) and (finalY == self.destinationY)):
+                    print("Finished")
                     self.carActive = False
                     self.journeyStarted = False
                     self.rideHistory.append(self.currentRider)
