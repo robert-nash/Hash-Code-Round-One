@@ -12,16 +12,21 @@ class Car:
     destinationX = 0
     destinationY = 0
 
+    currentRider = False
+    rideHistory = []
+
     def __init__(self,id):
         self.id = id
 
-    def startCar (self, startX, startY, destinationX, destinationY):
+    def startCar (self, startX, startY, destinationX, destinationY, riderID):
 
         self.startX = startX
         self.startY = startY
         self.destinationX = destinationX
         self.destinationY = destinationY
         self.carActive = True
+
+        self.currentRider = riderID
 
     def moveCar (self):
 
@@ -46,6 +51,9 @@ class Car:
                 if ((finalX == destinationX)&&(finalY == destinationY)):
                     self.carActive = False
                     self.journeyStarted = False
+                    self.rideHistory.append(self.currentRider)
+                    self.currentRider = False
+                    ## Finished
                 else:
                     self.journeyStarted = True
 
