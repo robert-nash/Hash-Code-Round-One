@@ -10,7 +10,10 @@ class Car:
     startY = 0
 
     destinationX = 0
-    destinationY = 0 
+    destinationY = 0
+
+    def __init__(self,id):
+        self.id = id
 
     def startCar (self, startX, startY, destinationX, destinationY):
 
