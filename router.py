@@ -1,7 +1,7 @@
 import math
 
 class Router:
-    def assignRide(current_ride, carList):
+    def assignCar(self,current_ride, carList):
         personX = current_ride.startX
         personY = current_ride.startY
         endX = current_ride.finishX
@@ -9,7 +9,7 @@ class Router:
         carDistance = -1
         carID = -1
         for current_car in carList:
-            if (!(current_car.carActive)):
+            if (not current_car.carActive):
                 carX = current_car.currentLocationX
                 carY = current_car.currentLocationY
                 pDistance = math.sqrt ((personX-carX)**2 + (personY-carY)**2)
@@ -21,4 +21,4 @@ class Router:
                         carDistance = pDistance
                         carID = current_car.id
 
-        carList[carID].startCar(personX, personY, endX, endY)
+        carList[carID].startCar(personX, personY, endX, endY,carID)

@@ -30,25 +30,25 @@ class Car:
 
     def moveCar (self):
 
-        if (journeyStarted == False):
-            finalX = startX
-            finalY = startY
+        if (self.journeyStarted == False):
+            finalX = self.startX
+            finalY = self.startY
         else:
-            finalX = destinationX
-            finalY = destinationY 
+            finalX = self.destinationX
+            finalY = self.destinationY 
 
-        if ((currentLocationX != finalX) || (currentLocationY != finalY)):
-            if (finalX > currentLocationX):
+        if ((self.currentLocationX != finalX) or (self.currentLocationY != finalY)):
+            if (finalX > self.currentLocationX):
                 self.currentLocationX += 1
-            elif (finalX < currentLocationX):
+            elif (finalX < self.currentLocationX):
                 self.currentLocationX -= 1
-            elif (finalY > currentLocationY):
+            elif (finalY > self.currentLocationY):
                 self.currentLocationY += 1
-            elif (finalY < currentLocationY):
+            elif (finalY < self.currentLocationY):
                 self.currentLocationY -= 1
 
-            if ((currentLocationX == finalX) && (currentLocationY == finalY)):
-                if ((finalX == destinationX)&&(finalY == destinationY)):
+            if ((self.currentLocationX == finalX) and (self.currentLocationY == finalY)):
+                if ((finalX == self.destinationX) and (finalY == self.destinationY)):
                     self.carActive = False
                     self.journeyStarted = False
                     self.rideHistory.append(self.currentRider)

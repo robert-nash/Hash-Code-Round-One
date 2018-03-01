@@ -1,14 +1,16 @@
 class Ride:
+    assignedCar = False
+
     def __init__(self, parameters):
         parametersList = parameters.split(' ')
-        self.startX = parametersList[0]
-        self.startY = parametersList[1]
+        self.startX = int(parametersList[0])
+        self.startY = int(parametersList[1])
 
-        self.finishX = parametersList[2]
-        self.finishY = parametersList[3]
+        self.finishX = int(parametersList[2])
+        self.finishY = int(parametersList[3])
 
-        self.earliestStart = parametersList[4]
-        self.earliestFinish = parametersList[5]
+        self.earliestStart = int(parametersList[4])
+        self.earliestFinish = int(parametersList[5])
 
     def assignCar(self, car):
         self.assignedCar = car

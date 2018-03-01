@@ -3,7 +3,7 @@ import ride, car, readFile, router
 # --------------------------------------------
 # Input File with Rides
 
-inputFile = 'something.txt'
+inputFile = 'a_example.in'
 
 rides = readFile.getRides(inputFile)
 parameters = readFile.getParameters(inputFile)
