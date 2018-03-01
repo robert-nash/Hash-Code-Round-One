@@ -15,13 +15,16 @@ carList = []
 for i in range (parameters["vehicles"]):
     carList.append (car.Car(i))
 
-for car in carList:
-    if (car.carActive):
-        car.moveCar()
 
-for current_ride in rides:
-    if (not current_ride.assigned()):
-        Router.assignCar(current_ride, carList)
+for j in range (parameters["steps"]):
+
+    for car in carList:
+        if (car.carActive):
+            car.moveCar()
+
+    for current_ride in rides:
+        if (not current_ride.assigned()):
+            Router.assignCar(current_ride, carList)
 
 # Create rides in for loop
 # Store in List
